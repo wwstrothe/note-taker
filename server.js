@@ -1,9 +1,10 @@
 const fs = require('fs');
-const path = require('path')
+const path = require('path');
+const { v4: uuidv4 } = require('uuid');
 
 const express = require("express");
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3001;
 
 app.use(express.json());
 app.use(express.static("public"));
@@ -17,7 +18,44 @@ app.get("/api/notes", (req, res) => {
     if (err) throw err;
     res.send(data);
   });
-})
+});
+
+app.post("/api/notes", (req, res) => {
+  fs.readFile(path.join(__dirname, "./db/db.json"), "utf8", (err, data) => {
+    if (err) throw err;
+    let notesArray = JSON.parse(data);
+    let newNote = req.body;
+    newNote.id = uuidv4();
+    notesArray.push(newNote);
+
+    fs.writeFile(
+      path.join(__dirname, "./db/db.json"),
+      JSON.stringify(notesArray),
+      (err) => {
+        if (err) throw err;
+        res.json(newNote);
+      });
+  });
+});
+
+app.delete("/api/notes/:id", (req, res) => {
+  fs.readFile(path.join(__dirname, "./db/db.json"), "utf8", (err, data) => {
+    if (err) throw err;
+    let notesArray = JSON.parse(data);
+    const filteredNotes = notesArray.filter(
+      (notes) => notes.id !== req.params.id
+    );
+
+    fs.writeFile(
+      path.join(__dirname, "./db/db.json"),
+      JSON.stringify(filteredNotes),
+      (err) => {
+        if (err) throw err;
+        res.json("Note has been Deleted");
+      }
+    );
+  });
+});
 
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "./public/index.html"));
