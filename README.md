@@ -6,7 +6,7 @@
   
   * [Description](#description)
   * [Installation](#installation)
-  * [Screenshot](#screenshot)
+  * [Screenshots](#screenshots)
   * [Usage](#usage)
   * [Contribution](#contribution)
   * [Tests](#tests)
@@ -22,8 +22,9 @@
   
   You can view the deployed app at: https://shrouded-temple-73799.herokuapp.com/
 
-  ## [Screenshot](#table-of-contents)
-  
+  ## [Screenshots](#table-of-contents)
+  ![homepage](./assets/homepage.png)
+  ![notespage](./assets/notespage.png)
   
   ## [Usage](#table-of-contents)
   
@@ -34,6 +35,8 @@
   - When you click on an existing note in the left-hand column, it will appear in the right-hand column.
   - When you click on the write icon in the navigation at the top of the page, then you are presented with empty fields to enter a new note title and the note's text in the right-hand column
   - BONUS: When you click on the Delete icon, then the note is deleted from the database and from the saved notes.
+
+  ![usage gif](./assets/usage.gif)
   
   ## [License](#table-of-contents)
 
