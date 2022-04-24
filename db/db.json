@@ -1,12 +1,1 @@
-[
-  {
-    "title": "Hello World",
-    "text": "Hello World",
-    "id": "6c7c7ae3-8dc0-41f0-b244-176489c09f03"
-  },
-  {
-    "title": "Goodbye World",
-    "text": "Goodbye World",
-    "id": "619b3387-3245-43f1-8aef-6214c45f6a29"
-  }
-]
+[{"title":"Mow the Lawn","text":"Weedwacker is in the shed","id":"fbc020b0-4c22-4f3b-86c8-94dd5d5d0eb3"},{"title":"Call the bank","text":"Call on friday about the payments","id":"b9eb9c9a-9045-4792-946f-ef3b9be5752c"},{"title":"finish payroll","text":"employees want to get paid, riots might start","id":"d12ad632-2315-4b91-b413-9ba1b24cd69e"},{"title":"end crime in the world","text":"become superman somehow","id":"21db62b1-fd65-4a9e-961c-7b4a55df2651"}]

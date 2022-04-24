@@ -4,7 +4,7 @@ const { v4: uuidv4 } = require('uuid');
 
 const express = require("express");
 const app = express();
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use(express.static("public"));
@@ -43,7 +43,7 @@ app.delete("/api/notes/:id", (req, res) => {
     if (err) throw err;
     let notesArray = JSON.parse(data);
     const filteredNotes = notesArray.filter(
-      (notes) => notes.id !== req.params.id
+      (note) => note.id !== req.params.id
     );
 
     fs.writeFile(
@@ -62,5 +62,5 @@ app.get("*", (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
+  console.log(`Launching Note Taker App on port ${port}`);
 });
